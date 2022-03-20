@@ -1,0 +1,67 @@
+.midjun{
+    text-align: center;
+}
+.bg{
+    background-image: url("../images/values-bg.jpg");
+    margin: auto;
+  }
+.bakgrunnur{
+    background-color: rgb(2, 172, 135);
+    margin: auto;
+    margin-bottom: 0px;
+    height: 100%;
+}
+.hvitt{
+    color: white;
+}
+.circle {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    padding: 2px;
+    margin-top: 15px;
+    border: 2px solid white;
+  }
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70%;
+    margin: 0 auto;
+    color: black;
+    padding: 50px;
+}
+.fela{
+    display: none;
+}
+
+.value{
+    text-align: center;
+}
+.value h1{
+    border: 2px solid #ffff;
+    border-radius:50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0.4em;
+    margin-top: 40px;
+}
+.píla{
+    display: grid;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    background: white;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 32px;
+    text-align: center;
+    align-items: center;
+}
+a:visited{
+    color: black;
+}
