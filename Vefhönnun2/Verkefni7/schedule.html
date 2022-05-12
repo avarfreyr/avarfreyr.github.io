@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="CSS grind">
+        <meta name="author" content="GJG">
+        <title>Dagskrá</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/base.css">
+        <!--<link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/allt.css">
+        <link rel="stylesheet" href="css/animation.css">
+        <link rel="stylesheet" href="css/fonts.css">-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/svg" href="images/MP3PLUGG_icon.svg">
+    </head>
+<body class="bakgrunnur birta">
+    <header class="efnis">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Um okkur</a></li>
+                <img src="images/MP3PLUGG.svg" height="50px" width="50px" class="logo">
+                <li><a href="order.html">Panta</a></li>
+                <li><a href="other.html">Annað</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="col-1">
+        <table class="tafla birta" id="SC">
+            <caption><h1 class="nafn">Dagskrá</h1></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Atburður</th>
+                    <th scope="col">Staðsetning</th>
+                    <th scope="col">Tími</th>
+                    <th scope="col">Dagsetning</th>
+                    <th scope="col">Verð</th>
+                </tr>
+                <!-- The scope attribute specifies whether a header cell is a header for a column, row, or group of columns or rows.
+                Note: The scope attribute has no visual effect in ordinary web browsers, but can be used by screen readers. -->
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row" data-label="AÖ">Dro Kenji</td>
+                    <td data-label="A">Laugardalshöll</td>
+                    <td data-label="B">20:30 - 22:00</td>
+                    <td data-label="C">9 Maí</td>
+                    <td data-label="D">6000 Kr</td>
+                    
+                </tr>
+                <tr>
+                    <td scope="row" data-label="AÖ">Dro kenji</td>
+                    <td data-label="A">Laugardalshöll</td>
+                    <td data-label="B">21:00 - 22:30</td>
+                    <td data-label="C">10 Maí</td>
+                    <td data-label="D">6000 Kr</td>
+                </tr>
+            </tbody>
+        </table>	
+    </nav>
+    <nav class="col-2">
+            <div>
+                <h3 class="panta"> <a href="order.html">PANTA</a> </h3>
+                
+            </div>
+            <div>
+                <section class="pantatexti">
+                    Dro Kenji kemur með orkuna beinustu leið frá Ameríku.
+                <br> Náðu þér í miða við að smella á fjólubláa pöntunar takkan.
+                </section>
+            </div>
+    </nav>
+    <nav>
+        <div class="midjun">
+            <h4 class="uppL">Með öllum miðum fylgja með: 1x 330ml Gos, 1x Dro Kenji stuttermabolur</h4>
+        </div>
+    </nav>
+    <footer class="footer col-3">
+        <nav>
+            <ul class="fotListi">
+                <li>MP3PLUGG</li>
+                <li>REDDAR</li>
+                <li>BESTU MIÐUM</li>
+                <li>HANDA ÞÉR</li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="fotListiLog">
+                <li class="icon-instagram"><a href="https://instagram.com">instagram</a></li>
+                <li class="icon-youtube"><a href="https://youtube.com">Youtube</a></li>
+                <li class="icon-github"><a href="https://github.com">Github</a></li>
+                <li class="icon-spotify"><a href="https://spotify.com">Spotify</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <dl class="fotListiUpp">
+                <dt>Sími:</dt>
+                    <dd>888-9999</dd>
+                <dt>Netfang:</dt>
+                    <dd>mp3plugg@gmail.com</dd>
+                <dt>Staðsetning:</dt>
+                    <dd>Háteigsvegur 105, Reykjavík</dd>
+            </dl>
+        </nav>
+    </footer>
+</body>
+</html>

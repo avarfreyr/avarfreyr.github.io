@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="CSS grind">
+        <meta name="author" content="GJG">
+        <title>Greiða</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!--<link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/allt.css">
+        <link rel="stylesheet" href="css/animation.css">
+        <link rel="stylesheet" href="css/fonts.css">-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/svg" href="images/MP3PLUGG_icon.svg">
+    </head>
+<body class="bakgrunnur birta">
+    <header class="efnis">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Um okkur</a></li>
+                <img src="images/MP3PLUGG.svg" height="50px" width="50px" class="logo">
+                <li><a href="schedule.html">Dagskrá</a></li>
+                <li><a href="other.html">Annað</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <nav>
+            <h1 class="midjun nafn">Greiðsla</h1>
+        </nav>
+    </div>
+    <nav>
+        <section class="contact-box birta" id="con">
+            <form action="../sendFormInfo" method="POST">
+                <label for="braut">Staðfestu tíma*</label>
+        
+                <select name="timi" id="timi">
+                  <option value="9mai">9 Maí, 20:30 - 22:00</option>
+                  <option value="10mai">10 Maí, 21:00 - 22:30</option>
+                </select>
+                <br> <h4>Kortanúmer*</h4> 
+                <input type="text" required placeholder="Sláðu inn kortanúmer" maxlength="16">
+              <br><h4>Útrennslu-kóði*</h4>
+                <input type="text" required placeholder="Sláðu inn útrennslu á korti" maxlength="4">
+              <br><h4>Öryggiskóði*</h4>
+                <input type="text" required placeholder="Sláðu inn öryggiskóða kortsins" maxlength="3">
+              <br><h4>Nafn á korti*</h4>
+                <input type="text" required placeholder="Sláðu inn nafn á korti">
+              <br><h4>Heimilisfang*</h4>
+                <input type="text" required placeholder="Heimilisfang">
+              <br><h4>Eitthvað annað sem þú villt láta okkur vita af?</h4>
+                <textarea></textarea>
+                
+              <br> 
+                <input type="submit" value= "Kaupa miða">
+              </p>
+            </form>
+          </section>
+    </nav>
+
+<footer class="footer col-3">
+    <nav>
+        <ul class="fotListi">
+            <li>MP3PLUGG</li>
+            <li>REDDAR</li>
+            <li>BESTU MIÐUM</li>
+            <li>HANDA ÞÉR</li>
+        </ul>
+    </nav>
+    <nav>
+        <ul class="fotListiLog">
+            <li class="icon-instagram"><a href="https://instagram.com">instagram</a></li>
+            <li class="icon-youtube"><a href="https://youtube.com">Youtube</a></li>
+            <li class="icon-github"><a href="https://github.com">Github</a></li>
+            <li class="icon-spotify"><a href="https://spotify.com">Spotify</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <dl class="fotListiUpp">
+            <dt>Sími:</dt>
+                <dd>888-9999</dd>
+            <dt>Netfang:</dt>
+                <dd>mp3plugg@gmail.com</dd>
+            <dt>Staðsetning:</dt>
+                <dd>Háteigsvegur 105, Reykjavík</dd>
+        </dl>
+    </nav>
+</footer>
+</body>
+</html>

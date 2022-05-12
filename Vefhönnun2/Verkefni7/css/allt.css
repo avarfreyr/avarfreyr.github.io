@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../icomoon/fonts/icomoon.eot?cf541o');
+    src:  url('../icomoon/fonts/icomoon.eot?cf541o#iefix') format('embedded-opentype'),
+      url('../icomoon/fonts/icomoon.ttf?cf541o') format('truetype'),
+      url('../icomoon/fonts/icomoon.woff?cf541o') format('woff'),
+      url('../icomoon/fonts/icomoon.svg?cf541o#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-instagram:before {
+    content: "\ea92";
+    padding-right: 10px;
+  }
+  .icon-spotify:before {
+    content: "\ea94";
+    padding-right: 10px;
+  }
+  .icon-youtube:before {
+    content: "\ea9d";
+    padding-right: 10px;
+  }
+  .icon-github:before {
+    content: "\eab0";
+    padding-right: 10px;
+  }
+
+body{
+    margin: 0;
+}
+.bakgrunnur{
+    background: white;
+    margin: auto;
+}
+.efnis{
+    height: auto;
+    background: rgb(121, 4, 123);
+  }
+.efnis{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+.efnis a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border: 5px solid rgb(96, 4, 98);
+    background-color: rgb(96, 4, 98);
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.efnis nav ul li{
+    display: inline;
+}
+.logo{
+    align-items: center;
+}
+.nafn{
+    font-family: 'Baumans', cursive;
+}
+.midjun{
+    text-align: center;
+}
+.kenji{
+    width: 715px;
+    height: 494px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.footer{
+    height: auto;
+    background: rgb(121, 4, 123);
+    color: white;
+    padding: 15px;    
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+}
+nav{
+    width: 70%;
+    margin: 0 auto;
+}
+div nav{
+    font-family: 'Bree Serif', serif;
+}
+.plass{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.almennurTexti{
+    margin-bottom: 50px;
+}
+ul li{
+    list-style: none;
+}
+.tafla{
+    align-items: center;
+}
+.panta{
+    border: 5px solid rgb(96, 4, 98);
+    background-color: rgb(96, 4, 98);
+    border-radius: 10%; 
+    font-family: 'Bree Serif', serif;
+    width: 80px;
+}
+.panta a{
+    text-decoration: none;
+}
+.panta a:visited{
+    color: white;
+
+}
+.panta a:hover{
+    color: white;
+    font-style: italic;
+
+}
+.contact-box{
+    margin: 20px;
+}
+
+tr:nth-child(2n) {
+    background: rgba(121, 4, 123, 0.2);
+    
+  }
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
+.pantatexti{
+    margin-top: 12px;
+    margin-bottom: 70px;
+}
+.fotListi{
+    margin-top: 35px;
+}
+.fotListiLog{
+    margin-top: 50px;
+}
+.fotListiUpp{
+    margin-top: 35px;
+}
+.uppL{
+    text-decoration: underline;
+    color: red;
+    font-weight: bold;
+}
