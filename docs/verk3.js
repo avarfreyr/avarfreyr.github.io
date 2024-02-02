@@ -7,6 +7,9 @@ canvas.height = window.innerHeight;
 
 const radius = 50;
 const angle = Math.PI / 180;
+const acceleration = 0.1;
+const maxSpeed = 5;
+const easingFactor = 0.1;
 
 document.addEventListener(
     "keydown",
@@ -30,6 +33,7 @@ function toggleFullScreen() {
     }
   }
 toggleFullScreen()
+
 class Start {
     constructor({ position, velocity}) {
         this.position = position
@@ -218,13 +222,16 @@ function animate() {
     start.draw()
     end.draw()
 
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText('Press Enter For FullScreen!', canvas.width / 80, canvas.height / 20);
+
     player.update()
-    player.velocity.x = 0
-    player.velocity.y = 0
     player.checkCollisionWithHoles([hole1, hole2, hole3, hole4])
 
     
-    if (player.position.x + player.radius >= end.position.x - end.radius) {
+    if (player.position.x + player.radius >= end.position.x - end.radius && player.position.y + player.radius >= end.position.y - end.radius
+        && player.position.y + player.radius <= end.position.y + end.radius) {
         if (c <= 0){
             let winSound = new Audio();
             winSound.src = 'hooray.wav';
@@ -236,14 +243,17 @@ function animate() {
         ctx.fillText('Leik Lokid!', canvas.width / 2 - 80, canvas.height / 2);
     }
 
-    if (keys.w.pressed && lastKey === 'w') {
-        player.velocity.y = -5
-    } else if (keys.a.pressed && lastKey === 'a') {
-        player.velocity.x = -5
-    } else if (keys.s.pressed && lastKey === 's') {
-        player.velocity.y = 5
-    } else if (keys.d.pressed && lastKey === 'd') {
-        player.velocity.x = 5
+    if (keys.w.pressed && lastKey === 'w' && player.velocity.y > -maxSpeed) {
+        player.velocity.y -= acceleration;
+    } else if (keys.a.pressed && lastKey === 'a' && player.velocity.x > -maxSpeed) {
+        player.velocity.x -= acceleration;
+    } else if (keys.s.pressed && lastKey === 's' && player.velocity.y < maxSpeed) {
+        player.velocity.y += acceleration;
+    } else if (keys.d.pressed && lastKey === 'd' && player.velocity.x < maxSpeed) {
+        player.velocity.x += acceleration;
+    } else {
+        player.velocity.x *= 1 - easingFactor;
+        player.velocity.y *= 1 - easingFactor;
     }
 
     hole1.draw()
