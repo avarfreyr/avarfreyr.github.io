@@ -10,16 +10,25 @@
             width: 100%;
         }
         body {
+            background-color: white;
             margin: 0px;
             height: 100%;
             width: 100%;
             overflow: hidden;
         }
+        #fullScreenButton {
+            position: absolute;
+            font-size: 20px;
+            padding: 10px;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
     <canvas id="canvas"></canvas>
-
+    <button id='fullScreenButton'>Toggle Fullscreen</button>
     <script src="verk3.js"></script>
 </body>
 </html>
