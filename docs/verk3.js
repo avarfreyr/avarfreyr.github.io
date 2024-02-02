@@ -21,10 +21,21 @@ document.addEventListener(
     false,
   );
 
+window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+    const portrait = e.matches;
+
+    if (portrait) {
+        alert("You are in portrait");
+    } else {
+        alert("You are in landscape")
+    }
+});
+
+
 function vibrate(){
     navigator.vibrate([500]);
 }
-
+/*
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
@@ -33,6 +44,7 @@ function toggleFullScreen() {
     }
   }
 toggleFullScreen()
+*/
 
 class Start {
     constructor({ position, velocity}) {
