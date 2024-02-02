@@ -9,6 +9,7 @@ const angle = Math.PI / 180;
 const acceleration = 0.1;
 const maxSpeed = 5;
 const easingFactor = 0.1;
+const fullScreenButton = document.getElementById('fullScreenButton');
 
 document.addEventListener(
     "keydown",
@@ -22,7 +23,6 @@ document.addEventListener(
 
 window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
     const portrait = e.matches;
-
     if (portrait) {
         alert("You are in portrait");
     } else {
@@ -34,16 +34,18 @@ window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
 function vibrate(){
     navigator.vibrate([500]);
 }
-/*
+
 function toggleFullScreen() {
+    console.log(document.fullscreenElement);
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-    } else if (document.exitFullscreen) {
-      document.exitFullscreen();
+        canvas.requestFullscreen().catch(err => {
+            alert("Error, can't enable full-screen mode: ${err.message}");
+        });
+    } else {
+        document.exitFullscreen();
     }
-  }
-toggleFullScreen()
-*/
+}
+fullScreenButton.addEventListener('click', toggleFullScreen);
 
 class Start {
     constructor({ position, velocity}) {
@@ -232,10 +234,6 @@ function animate() {
 
     start.draw()
     end.draw()
-
-    ctx.font = '20px Arial';
-    ctx.fillStyle = 'black';
-    ctx.fillText('Press Enter For FullScreen!', canvas.width / 80, canvas.height / 20);
 
     player.update()
     player.checkCollisionWithHoles([hole1, hole2, hole3, hole4])
