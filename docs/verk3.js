@@ -10,6 +10,46 @@ const acceleration = 0.1;
 const maxSpeed = 5;
 const easingFactor = 0.1;
 const fullScreenButton = document.getElementById('fullScreenButton');
+const startScreen = document.getElementById('start-screen');
+
+let gameStarted = false;
+
+let startTouchX;
+
+canvas.addEventListener('touchstart', function(e) {
+    startTouchX = e.touches[0].clientX;
+});
+
+canvas.addEventListener('touchend', function(e) {
+    const endTouchX = e.changedTouches[0].clientX;
+    const swipeDistance = endTouchX - startTouchX;
+
+    if (!gameStarted && Math.abs(swipeDistance) > 50) {
+        startGame();
+    }
+});
+
+document.addEventListener(
+    "keydown",
+    (e) => {
+      if (!gameStarted && e.key === "Enter") { // Check if game hasn't started
+        startGame();
+      }
+    },
+    false,
+);
+
+function startGame() {
+    startScreen.style.display = 'none'; // Hide start screen
+    gameStarted = true; // Set game started flag
+    // Your game initialization code goes here
+}
+
+window.addEventListener('devicemotion', event => {
+    event.accelerationIncludingGravity.x
+    event.accelerationIncludingGravity.y
+    event.gamma
+}, true);
 
 document.addEventListener(
     "keydown",
