@@ -10,40 +10,6 @@ const acceleration = 0.1;
 const maxSpeed = 5;
 const easingFactor = 0.1;
 const fullScreenButton = document.getElementById('fullScreenButton');
-const startScreen = document.getElementById('start-screen');
-
-let gameStarted = false;
-
-let startTouchX;
-
-canvas.addEventListener('touchstart', function(e) {
-    startTouchX = e.touches[0].clientX;
-});
-
-canvas.addEventListener('touchend', function(e) {
-    const endTouchX = e.changedTouches[0].clientX;
-    const swipeDistance = endTouchX - startTouchX;
-
-    if (!gameStarted && Math.abs(swipeDistance) > 50) {
-        startGame();
-    }
-});
-
-document.addEventListener(
-    "keydown",
-    (e) => {
-      if (!gameStarted && e.key === "Enter") { // Check if game hasn't started
-        startGame();
-      }
-    },
-    false,
-);
-
-function startGame() {
-    startScreen.style.display = 'none'; // Hide start screen
-    gameStarted = true; // Set game started flag
-    // Your game initialization code goes here
-}
 
 window.addEventListener('devicemotion', event => {
     event.accelerationIncludingGravity.x
@@ -61,15 +27,26 @@ document.addEventListener(
     false,
   );
 
-window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-    const portrait = e.matches;
-    if (portrait) {
-        alert("You are in portrait");
+window.matchMedia("(orientation: landscape)").addEventListener("change", e => {
+    const landscape = e.matches;
+    if (landscape) {
+        lockLandscapeOrientation();
     } else {
-        alert("You are in landscape")
+        unlockOrientation();
     }
 });
 
+function lockLandscapeOrientation() {
+    if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock('landscape');
+    }
+}
+
+function unlockOrientation() {
+    if (screen.orientation && screen.orientation.unlock) {
+        screen.orientation.unlock();
+    }
+}
 
 function vibrate(){
     navigator.vibrate([500]);
@@ -202,21 +179,6 @@ const player = new Player({
     }
 })
 
-const keys = {
-    w: {
-        pressed: false
-    },
-    a: {
-        pressed: false
-    },
-    s: {
-        pressed: false
-    },
-    d: {
-        pressed: false
-    }
-}
-
 const start = new Start({
     position: {
         x: 0,
@@ -292,19 +254,6 @@ function animate() {
         ctx.fillText('Leik Lokid!', canvas.width / 2 - 80, canvas.height / 2);
     }
 
-    if (keys.w.pressed && lastKey === 'w' && player.velocity.y > -maxSpeed) {
-        player.velocity.y -= acceleration;
-    } else if (keys.a.pressed && lastKey === 'a' && player.velocity.x > -maxSpeed) {
-        player.velocity.x -= acceleration;
-    } else if (keys.s.pressed && lastKey === 's' && player.velocity.y < maxSpeed) {
-        player.velocity.y += acceleration;
-    } else if (keys.d.pressed && lastKey === 'd' && player.velocity.x < maxSpeed) {
-        player.velocity.x += acceleration;
-    } else {
-        player.velocity.x *= 1 - easingFactor;
-        player.velocity.y *= 1 - easingFactor;
-    }
-
     hole1.draw()
     hole2.draw()
     hole3.draw()
@@ -312,43 +261,3 @@ function animate() {
 }
 
 animate()
-
-addEventListener('keydown', ({ key }) => {
-    switch (key) {
-        case 'w':
-            keys.w.pressed = true
-            lastKey = 'w'
-            break
-        case 'a':
-            keys.a.pressed = true
-            lastKey = 'a'
-            break
-        case 's':
-            keys.s.pressed = true
-            lastKey = 's'
-            break
-        case 'd':
-            keys.d.pressed = true
-            lastKey = 'd'
-            break
-    }
-} )
-
-addEventListener('keyup', ({ key }) => {
-    switch (key) {
-        case 'w':
-            keys.w.pressed = false
-            break
-        case 'a':
-            keys.a.pressed = false
-            break
-        case 's':
-            keys.s.pressed = false
-            break
-        case 'd':
-            keys.d.pressed = false
-            break
-    }
-    console.log(keys.d.pressed)
-    console.log(keys.s.pressed)
-} )
