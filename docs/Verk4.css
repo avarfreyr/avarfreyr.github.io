@@ -118,6 +118,7 @@ i {
 @media only screen and (max-width: 600px) {
     html{
         min-width: 400px;
+        overflow: hidden;
     }  
     .container{
         max-width: 100%;
