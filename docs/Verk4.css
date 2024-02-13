@@ -109,3 +109,20 @@ i {
     transform: translateY(12rem) rotateZ(10deg);
     opacity: 0;
 }
+
+.totalPrice {
+    padding: 15px 0;
+    border-bottom: 1px solid lightgray;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+    .innkaupaListi {
+      padding: 10px;
+    }
+    .toppur h1 {
+      font-size: 1.5rem;
+    }
+  }
