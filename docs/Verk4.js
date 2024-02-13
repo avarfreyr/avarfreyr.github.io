@@ -38,8 +38,7 @@ function addItem(item) {
     let li = document.createElement('li');
 
     li.innerHTML = `
-        <span class="todo-item">${item.name} ${item.price}kr</span>
-        <button name = "checkButton"><i class="fas fa-check-square"></i></button>
+        <span class="todo-item">${item.name}</span> <span class="todo-item-price"> ${item.price}kr</span>
         <button name = "deleteButton"><i class="fas fa-trash"></i></button>
 
     `;
@@ -59,7 +58,7 @@ function checkItem(e) {
 
 function calculateTotal() {
     let totalPrice = 0;
-    document.querySelectorAll('.todo-item').forEach(item => {
+    document.querySelectorAll('.todo-item-price').forEach(item => {
         let price = parseFloat(item.textContent.match(/\d+/)[0]);
         totalPrice += price;
     });
