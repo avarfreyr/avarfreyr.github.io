@@ -116,13 +116,22 @@ i {
 }
 
 @media only screen and (max-width: 600px) {
-    .container {
-      width: 100%;
+    html{
+        min-width: 400px;
+    }  
+    .container{
+        max-width: 100%;
+        margin: 0;
     }
-    .innkaupaListi {
-      padding: 10px;
+    input, button {
+        width: 10%; 
     }
-    .toppur h1 {
-      font-size: 1.5rem;
+    button {
+        font-size: 1.5rem;
+        background-color: #FFFFFF;
+        outline: 0;
+        border: none;
+        color: #595959;
+        padding-right: 0px;
     }
   }
